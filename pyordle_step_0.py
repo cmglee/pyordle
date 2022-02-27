@@ -1,0 +1,76 @@
+"""
+Python 3 implementation of a popular 2022 word game by CMG Lee licensed under CC-BY-SA 4.0
+"""
+
+import random
+
+DEFAULT_ANSWER         = 'MONTY'
+FORMAT_KEYBOARD_MARK_L = [' {} ', '   ' , '<{}>', '[{}]'] ## 0=white, 1=grey, 2=amber, 3=green
+FORMAT_GUESS_MARK_L    = [' {} ', ' {} ', '<{}>', '[{}]']
+N_LETTER               = 5
+FILE_ANSWER            = 'pyordle_answers.txt'
+FILE_VALID             = 'pyordle_valid.txt'
+KEYBOARD               = '''
+ Q W E R T Y U I O P
+ A S D F G H J K L
+ Z X C V B N M'''
+PRAISE_L               = ['Genius', 'Magnificent', 'Impressive', 'Splendid', 'Great', 'Phew']
+n_guess                = len(PRAISE_L)
+
+## TODO: Input guess for computer's word
+
+def input_guess(i_guess, n_guess, valid_s):
+  guess = ''
+  ## ...
+  return guess
+
+## TODO: Evaluate result for a given answer
+
+def evaluate_guess(guess, answer):
+  guess_mark_l = [1] * N_LETTER
+  ## ...
+  return guess_mark_l
+
+## TODO: Output result
+
+def display_result(guess, i_guess, guess_mark_l, keyboard_mark_d):
+  ## ...
+  pass
+
+## TODO: Output message
+
+def display_message(message):
+  ## ...
+  pass
+
+
+## Make compatible with both Python 2 and 3
+
+try:              raw_input
+except NameError: raw_input = input
+
+## TODO: Read words
+
+answer_s = set([DEFAULT_ANSWER])
+valid_s  = set([]).union(answer_s)
+display_message([len(answer_s), len(valid_s), list(valid_s)[0]])
+
+## TODO: Set puzzle
+
+answer          = DEFAULT_ANSWER ## or ...
+answer          = answer.upper()
+i_guess         = 0
+keyboard_mark_d = {letter:0 for letter in KEYBOARD if 'A' <= letter <= 'Z'}
+status          = 0 ## 0=answer not found, 1=answer found
+
+while i_guess < n_guess:
+  i_guess += 1
+  ## Get guess
+  # guess = input_guess(i_guess, n_guess, valid_s)
+
+  ## TODO: Evaluate guess
+  # guess_mark_l = evaluate_guess(guess, answer)
+  # display_result(guess, i_guess, guess_mark_l, keyboard_mark_d)
+  ## ...
+
+## TODO: Output final message
